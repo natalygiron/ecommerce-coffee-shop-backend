@@ -189,9 +189,9 @@ const loginUser = async (req, res) => {
     }
 }
 
-const logout = async (req, res) => {
-    req.headers.authorization = undefined;
-}
+// const logout = async (req, res) => {
+//     req.headers.authorization = undefined;
+// }
 
 
 module.exports = {
@@ -200,7 +200,6 @@ module.exports = {
     getUserById,
     deleteUserById,
     updateUserById,
-    loginUser,
-    logout
+    loginUser
 
 }

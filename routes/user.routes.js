@@ -7,7 +7,7 @@ const {authorization} = require('../middlewares/isAdmin');
 // Obtener todos los usuarios
 router.get("/users", authorization(['admin']), userController.getAllUsers);
 
-router.post("/user/logout", authorization(['customer','admin']), userController.logout);
+// router.post("/user/logout", authorization(['customer','admin']), userController.logout);
 
 // Obtener usuario por id
 router.get("/user/:id",authorization(['customer','admin']), jwtVerify, userController.getUserById);
