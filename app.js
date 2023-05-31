@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const productRoutes = require('./routes/product.routes.js');
 const userRoutes = require('./routes/user.routes.js');
+const orderRoutes = require('./routes/order.routes.js');
 
 // middlewares
 app.use(express.json());
@@ -17,5 +18,6 @@ app.get("/api/", (request, response) => {
 // Defining routes for my express app
 app.use(productRoutes);
 app.use(userRoutes);
+app.use(orderRoutes);
 
 module.exports = app;

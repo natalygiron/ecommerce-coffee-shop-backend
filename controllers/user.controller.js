@@ -160,7 +160,6 @@ const loginUser = async (req, res) => {
 
         if(!user) return res.status(404).send(`Login incorrecto. Usuario no encontrado.`);
 
-        // const result = (password == user.password) ? true : false;
         const result = await bcrypt.compare(password, user.password);
 
         if(!result) {
@@ -190,6 +189,9 @@ const loginUser = async (req, res) => {
     }
 }
 
+const logout = async (req, res) => {
+    req.headers.authorization = undefined;
+}
 
 
 module.exports = {
@@ -198,6 +200,7 @@ module.exports = {
     getUserById,
     deleteUserById,
     updateUserById,
-    loginUser
+    loginUser,
+    logout
 
 }
