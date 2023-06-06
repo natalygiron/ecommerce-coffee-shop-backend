@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <!-- Include a required theme -->
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+  <!-- <div class="wa-container">
+    <a href="https://wa.me/51998001467" class="wa-link">
+      <img src="../../assets/img/logo/logo-whatsapp-png-46048.png" style="height: 70px; "/>
+    </a>
+  </div> -->
+
+  <div class="container">
+    <div class="title">Login</div>
+    <div class="content">
+      <form id="loginform">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" name="email" minlength="12" placeholder="Ingrese su email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Contraseña</span>
+            <input type="password" name="password" minlength="8" placeholder="Ingrese su contraseña" required>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" class="btn" value="Ingresar">
+        </div>
+        <div class="register-link">
+            <a href="/api/register">¿No tienes cuenta? Registrarse</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- <footer>
+    <h1>© AromaCoffee</h1>
+  </footer> -->
+
+  <%- include('../partials/footer') %>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/js/login.js"></script>
+  <script src="/js/header.js"></script>
+</body>
+</html>

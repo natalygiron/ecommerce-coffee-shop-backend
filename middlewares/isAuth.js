@@ -22,8 +22,8 @@ const jwtVerify = (req, res, next) => {
             })
         }
 
-        console.log(`Payload`);
-        console.log(payload);
+        // console.log(`Payload`);
+        // console.log(payload);
 
         req.user = payload;
 

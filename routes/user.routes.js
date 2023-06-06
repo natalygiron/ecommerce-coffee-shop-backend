@@ -7,7 +7,9 @@ const {authorization} = require('../middlewares/isAdmin');
 // Obtener todos los usuarios
 router.get("/users", authorization(['admin']), userController.getAllUsers);
 
-// router.post("/user/logout", authorization(['customer','admin']), userController.logout);
+router.get("/users/:email", userController.findUserByEmail);
+
+router.post("/user/logout", authorization(['customer','admin']), userController.logout);
 
 // Obtener usuario por id
 router.get("/user/:id",authorization(['customer','admin']), jwtVerify, userController.getUserById);
@@ -22,6 +24,6 @@ router.delete("/user/:id", authorization(['admin']), userController.deleteUserBy
 router.patch("/user/:id", authorization(['admin']), userController.updateUserById);
 
 // Login
-router.post("/user/login", authorization(['customer','admin']), userController.loginUser);
+router.post("/user/login", userController.loginUser);
 
 module.exports = router;

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/product.css">
+
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <!-- Include a required theme -->
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+</head>
+<body>
+
+    <%- include('../partials/header') %>
+
+    <div class="container">
+        <!-- Left Column -->
+        <div class="left-column">
+            <img class="active" src="/upload/product/4d38ddac-722d-43ca-9a24-bdb9d2ade483.jpg" alt="">
+        </div>
+    
+        <!-- Right Column -->
+        <div class="right-column">
+            
+            <!-- Product Description -->
+            <div class="product-description">
+                <span>Tazas</span>
+                <h1>Taza capricornio</h1>
+                <p>Cositas picosas que tiene la taza, obvio tiene la constelaci'on god</p>
+            </div>
+            <!-- Product Configuration -->
+            <div class="product-configuration">
+                <span>Existencias:20 disponibles</span>
+                <!-- Product Color -->
+                <div class="product-amount">
+                    <span>Cantidad:</span>
+            
+                    <div class="amount-choose">
+                        <div>
+                        <input type="number" id="amount" name="amount" value="1" checked><label for="amount"><span></span></label>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+            <!-- Product Pricing -->
+            <div class="product-price">
+                <span>s/12.90</span>
+                <button class="cart-btn" onclick="addCarrito()">Añadir al carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/detalle_product.js"></script>
+    <script src="/js/header.js"></script>
+</body>
+</html>

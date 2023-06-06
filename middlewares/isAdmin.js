@@ -1,7 +1,7 @@
 const User = require('../schemas/user.schema');
 
 const authorization = (roles) => async (req, res, next) => {
-
+    
     const token = req.headers.authorization;
     
     const jwt_parse = JSON.parse(Buffer.from(token?.split('.')[1], 'base64').toString());

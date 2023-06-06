@@ -11,7 +11,7 @@ const getAllProducts = async (req,res) => {
     } catch (error) {
         return res.status(400).send({
             ok: false,
-            msg: 'No se pudieron obtener los productos.',
+            msg: 'Error al obtener los productos.',
             error
         })
     }

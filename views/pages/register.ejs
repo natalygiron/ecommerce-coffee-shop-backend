@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <!-- Include a required theme -->
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+</head>
+<body>
+
+    <%- include('../partials/header') %>
+       
+    <div class="container" style="margin-top: 100px;">
+        <div class="title">Registro</div>
+        <div class="content">
+          <form id="registerForm">
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">Nombre Completo</span>
+                <input type="text" name="fullname" minlength="8" placeholder="Ingrese su nombre completo" required>
+              </div>
+              <div class="input-box">
+                <span class="details">DNI</span>
+                <input type="text" name="dni" minlength="8" maxlength="10" placeholder="Ingrese su DNI" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Email</span>
+                <input type="text" name="email" minlength="12" placeholder="Ingrese su email" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Teléfono</span>
+                <input type="text" name="phone" placeholder="Ingrese su teléfono" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Contraseña</span>
+                <input type="password" name="password" minlength="8" placeholder="Ingrese su contraseña" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Confirmar contraseña</span>
+                <input type="password" name="confirm_password" minlength="8" placeholder="Confirme su contraseña" required>
+              </div>
+            </div>
+            
+            <div class="gender-details">
+              <input type="radio" name="gender" id="dot-1">
+              <input type="radio" name="gender" id="dot-2">
+              <input type="radio" name="gender" id="dot-3">
+              <span class="gender-title">Género</span>
+              <div class="category">
+                <label for="dot-1">
+                    <span class="dot one"></span>
+                    <span class="gender">Femenino</span>
+                </label>
+                <label for="dot-2">
+                    <span class="dot two"></span>
+                    <span class="gender">Masculino</span>
+                </label>
+                <label for="dot-3">
+                    <span class="dot three"></span>
+                    <span class="gender">Prefiero no decirlo</span>
+                </label>
+              </div>
+            </div>
+            <!-- <div class="button">
+              <input type="submit" id="registerbtn" value="Registrarse">
+            </div> -->
+            <div class="button">
+              <button type="submit" id="registerbtn">Registrarse</button>
+            </div>
+            </form>
+        </div>
+      </div>
+      <div class="wa-container">
+        <a href="https://wa.me/51998001467" class="wa-link">
+          <img src="../../assets/img/logo/logo-whatsapp-png-46048.png" style="height: 70px;"/>
+        </a>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script src="/js/register.js"></script>
+      <script src="/js/header.js"></script>
+</body>
+</html>

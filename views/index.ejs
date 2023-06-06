@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homemade coffee</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+</head>
+<body>
+
+    <%- include('partials/header') %>
+
+    <div class="container">
+      <!-- Flickity HTML init -->
+      <div class="main">
+          <div class="carousel" data-flickity='{ "groupCells": true }'
+          data-flickity='{ "imagesLoaded": true, "percentPosition": false }'>
+            <img class="carousel-cell" src="https://d2j6dbq0eux0bg.cloudfront.net/startersite/images/54272243/1673076865173.jpg" alt="coffee cat" />
+            <img class="carousel-cell" src="https://www.nespresso.com/ecom/medias/sys_master/public/15970493104158/Coffee-Profiler2022-Card-Highlight-Lifestyle-720x400-v1.jpg?impolicy=small&imwidth=574&imdensity=1" alt="coffee cups" />
+            <img class="carousel-cell" src="/assets/images/banner/unsplash-coffee-14.jpg" alt="coffee img 14" />
+            <img class="carousel-cell" src="/assets/images/banner/unsplash-coffee-15.jpeg" alt="coffee img 15" />
+            <img class="carousel-cell" src="/assets/images/banner/unsplash-coffee-11.jpg" alt="coffee img 11" />
+            <img class="carousel-cell" src="/assets/images/banner/unsplash-coffee-13.jpg" alt="coffee img 13" />
+          </div>
+
+          <h1>Productos destacados</h1>
+
+          <div class="searchcontainer">
+            <p>
+              <input id="filtro" type="search" placeholder="Producto..." class="imputSearch">
+              <button class="buttonSearch" onclick="searchProducts()"><i class="fa fa-search"></i></button>
+            </p>
+            <p id="message-filtro"></p>
+          </div>
+
+          <ul class="cards">
+            <!-- Cargar productos -->
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><img src="${imageSrc}"></div>
+                    <div class="card_content">
+                        <h2 class="card_title">${producto.name}</h2>
+                        <p class="card_text">S/${producto.price}</p>
+                        <button class="btn_catalogo card_btn" onclick='location.href="../api/product/:id"'>Comprar</button>
+                    </div>
+                </div>
+            </li>
+          </ul>
+        </div>
+        
+    </div>
+      
+    <%- include('partials/footer') %>
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/product.js"></script>
+    <script src="/js/header.js"></script>
+</body>
+</html>

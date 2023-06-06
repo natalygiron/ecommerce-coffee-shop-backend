@@ -7,17 +7,11 @@ const secret_code = 'm4r0on_6ur9ündy';
 const getAllUsers = async (req,res) => {
     try{
         const users = await User.find();
-        //     $or: [
-        //         { name: { $regex: req.query.search, $options: 'i' } },
-        //         { email: { $regex: req.query.search, $options: 'i' } }
-        //     ],
-        //     active: true
-        // }).collation({locale: 'es'});
 
-        console.log(`Longitud de la búsqueda`, users.length);
+        // console.log(`Longitud de la búsqueda`, users.length);
 
         const totalUsera = await User.countDocuments();
-        console.log(`Total de usuarios `,totalUsera);
+        // console.log(`Total de usuarios `,totalUsera);
 
         return res.status(200).send({
             ok: true,
@@ -47,7 +41,7 @@ const createUser = async (req,res) => {
         if (userToCreate.role.toLowerCase() != 'admin') userToCreate.role = 'customer';
         
         const password = req.body.password;
-        const hash = await bcrypt.hash( password, 10);
+        const hash = await bcrypt.hash(password, 10);
 
         userToCreate.password = hash;
 
@@ -110,6 +104,16 @@ const updateUserById = async (req, res) => {
         }
 
         const userData = req.body;
+
+        if (userData.password.length != 0) {
+            const password = userData.password;
+            const hash = await bcrypt.hash( password, 10);
+    
+            userData.password = hash;
+        } else {
+            userData.password = user.password;
+        }
+
     
         const userUpdated = await User.findByIdAndUpdate(id, userData, {new: true});
 
@@ -127,6 +131,7 @@ const updateUserById = async (req, res) => {
 const deleteUserById = async (req, res) => {
     try {
         const id = req.params.id;
+
         const user = await User.findByIdAndDelete(id);
 
         if(!user) res.status(404).send({
@@ -189,9 +194,29 @@ const loginUser = async (req, res) => {
     }
 }
 
-// const logout = async (req, res) => {
-//     req.headers.authorization = undefined;
-// }
+const logout = async (req, res) => {
+    // code
+}
+
+const findUserByEmail = async (req, res) => {
+
+    try {
+        const email = req.params.email;
+
+        const user = await User.find({ email });
+
+        return res.send(user);
+
+    } catch (error) {
+        res.status(400).send({
+            msg: `Error al obtener usuario`,
+            ok: true,
+            error
+        })
+    }
+
+}
+
 
 
 module.exports = {
@@ -200,6 +225,7 @@ module.exports = {
     getUserById,
     deleteUserById,
     updateUserById,
-    loginUser
-
+    findUserByEmail,
+    loginUser,
+    logout
 }
