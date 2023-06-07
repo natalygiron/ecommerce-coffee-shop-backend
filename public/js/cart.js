@@ -3,7 +3,7 @@ let email = localStorage.getItem('email');
 
 let userMail = email;
 
-const URL = 'https://aromacoffee-natalygiron.onrender.com/';
+const URL = 'https://aromacoffee-natalygiron.onrender.com';
 
 let content = document.querySelector('.cart-content');
 

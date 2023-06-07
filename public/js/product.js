@@ -1,7 +1,7 @@
 // let productList = JSON.parse(localStorage.getItem('products'));
 let productList = [];
 
-const URL = 'https://aromacoffee-natalygiron.onrender.com/';
+const URL = 'https://aromacoffee-natalygiron.onrender.com';
 
 async function cargarProductos() {
     try {

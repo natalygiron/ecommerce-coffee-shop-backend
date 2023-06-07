@@ -4,7 +4,7 @@ let token = localStorage.getItem('token');
 let myUser = null;
 let Products = [];
 
-const URL = 'https://aromacoffee-natalygiron.onrender.com/';
+const URL = 'https://aromacoffee-natalygiron.onrender.com';
 
 axios.get(`${URL}/users/${userEmail}`).then(resp => {
     myUser = resp.data[0];

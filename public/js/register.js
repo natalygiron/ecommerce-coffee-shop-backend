@@ -4,7 +4,7 @@ const registerForm = document.getElementById('registerForm');
 // Guardar el el boton de registro en una variable
 const registerBtn = document.getElementById('registerbtn');
 
-const URL = 'https://aromacoffee-natalygiron.onrender.com/';
+const URL = 'https://aromacoffee-natalygiron.onrender.com';
 
 registerForm.addEventListener("submit", (e) => {
     e.preventDefault();

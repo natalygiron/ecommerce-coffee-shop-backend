@@ -1,7 +1,7 @@
 // Guardar el login_form en una variable
 const loginForm = document.getElementById('loginform');
 
-const URL = 'https://aromacoffee-natalygiron.onrender.com/';
+const URL = 'https://aromacoffee-natalygiron.onrender.com';
 
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
