@@ -71,6 +71,16 @@ function addCarrito() {
 
     if (!token) {
         console.log('Hola')
+
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            background: '#fff',
+            title: 'Tu producto ha sido agregado al carrito',
+            showConfirmButton: false,
+            timer: 2000
+        })
+
         Swal.fire({
             title: 'No has iniciado sesión',
             text: 'Necesitas iniciar sesión para realizar esta acción',

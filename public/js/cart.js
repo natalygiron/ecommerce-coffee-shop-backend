@@ -3,6 +3,8 @@ let email = localStorage.getItem('email');
 
 let userMail = email;
 
+const URL = 'http://localhost:3800';
+
 let content = document.querySelector('.cart-content');
 
 function renderizarCarrito() {
@@ -83,6 +85,27 @@ function editQuantity(ix, type) {
     localStorage.setItem('carrito', JSON.stringify(cart));
     renderizarCarrito();
 
+}
+
+function addOrder() {
+    let myCart = JSON.parse(localStorage.getItem('carrito'));
+    let token = localStorage.getItem('token');
+    
+    axios.post(`${URL}/order`, myCart, {
+        headers: {
+            Authorization: token
+        }
+    }).then(resp => {
+        //TODO: insertar alerta custom
+        Swal.fire('Orden Generada');
+
+        localStorage.setItem('token', resp.data.token);
+        localStorage.setItem('email', resp.data.user.email);
+
+        setTimeout(()=>{
+            window.location.href = '/api/order'; 
+        }, 1500);
+    });
 }
 
 renderizarCarrito();

@@ -22,4 +22,6 @@ router.get('/api/admin-product', (req, res) => res.render('admin/admin-product')
 
 router.get('/api/admin-user', (req, res) => res.render('admin/admin-user'));
 
+router.get('/api/order', (req, res) => res.render('pages/register'));
+
 module.exports = router;
