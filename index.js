@@ -1,7 +1,10 @@
 const app = require('./app');
 
-const port = 3800;
-const dbURL = `mongodb+srv://natalygirona:hkN2bK90vA1TZKlM@mycluster.ijclir9.mongodb.net/test`;
+require('dotenv').config();
+
+const port = process.env.PORT;
+const dbURL = process.env.MONGO_URL;
+
 const mongoose = require('mongoose');
 
 mongoose.connect(dbURL)
@@ -15,34 +18,3 @@ mongoose.connect(dbURL)
             console.log(error);
         })
 
-
-
-// const http = require('http');
-// const host = '127.0.0.1'
-
-// function index(req, res) {
-//     res.writeHead(200, { 'Content-Type' : 'text/plain' });
-//     res.end('Bienvenido a mi servidor');
-// }
-
-// function notFound(req, res) {
-//     res.writeHead(404, { 'Content-Type' : 'text/plain' });
-//     res.end('La ruta que busca no existe');
-// }
-
-// const server = http.createServer((request, response) => {
-
-//     console.log(request.url);
-    
-//     switch(request.url) {
-//         case '/':
-//             return index(request, response);
-//         default:
-//             return notFound(request, response);
-//     }
-
-// });
-
-// server.listen(port, host, () => {
-//     console.log(`\x1b[32m Servidor funcionando en el puerto: ${port} \  `)
-// })
