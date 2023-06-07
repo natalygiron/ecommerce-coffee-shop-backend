@@ -2,7 +2,7 @@ let url = window.location.search;
 let url_params = new URLSearchParams(url);
 let id = url_params.get('id');
 
-const URL = 'http://localhost:3800';
+const URL = 'https://aromacoffee-natalygiron.onrender.com/';
 
 //let product = JSON.parse(localStorage.getItem('products'))[id];
 
